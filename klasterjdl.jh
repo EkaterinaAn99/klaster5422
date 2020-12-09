@@ -1,0 +1,60 @@
+
+entity Students {
+	name String
+    surname String
+    middleName String
+    group String
+    type String
+    teachers String
+}
+
+entity GroupOfStudents {
+	nameOfStudents String
+    teachers String
+}
+
+entity Teachers {
+	name String
+    surname String
+    middleName String
+    type String 
+}
+
+entity Programs {
+	date ZonedDateTime
+    whoAdd String
+    group String
+    teachers String
+}
+
+enum Computer {
+    PC1, PC2, PC3, PC4, PC5
+}
+
+relationship OneToMany {
+	Student{progams} to Programs
+}
+
+relationship OneToMany {
+	GroupOfStudents{programs} to Programs
+}
+
+relationship OneToMany {
+	Teachers{programs} to Programs
+}
+
+relationship OneToMany {
+	Teachers{student} to Students
+}
+
+relationship OneToMany {
+	Teachers{groupofstudent} to GroupOfStudents
+}
+
+relationship OneToMany {
+	GroupOfStudents{students} to Students
+}
+
+relationship OneToMany {
+	Students{programs} to Programs
+}
