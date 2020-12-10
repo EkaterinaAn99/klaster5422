@@ -1,0 +1,66 @@
+{
+  "name": "Students",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "surname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "group",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "user",
+      "otherEntityField": "login",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "programs",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "progams"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teachers",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "teachers",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "groupOfStudents",
+      "otherEntityRelationshipName": "students",
+      "relationshipName": "groupOfStudents",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201210090314",
+  "entityTableName": "students",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

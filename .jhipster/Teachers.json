@@ -1,0 +1,60 @@
+{
+  "name": "Teachers",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "surname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "teachers",
+      "relationshipName": "user",
+      "otherEntityField": "login",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "programs",
+      "otherEntityRelationshipName": "teachers",
+      "relationshipName": "programs"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "students",
+      "otherEntityRelationshipName": "teachers",
+      "relationshipName": "students"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "groupOfStudents",
+      "otherEntityRelationshipName": "teachers",
+      "relationshipName": "groupofstudents"
+    }
+  ],
+  "changelogDate": "20201210090514",
+  "entityTableName": "teachers",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

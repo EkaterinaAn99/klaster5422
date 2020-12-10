@@ -1,0 +1,41 @@
+{
+  "name": "GroupOfStudents",
+  "fields": [
+    {
+      "fieldName": "nameOfStudents",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "programs",
+      "otherEntityRelationshipName": "groupOfStudents",
+      "relationshipName": "programs"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "students",
+      "otherEntityRelationshipName": "groupOfStudents",
+      "relationshipName": "students"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teachers",
+      "otherEntityRelationshipName": "groupofstudents",
+      "relationshipName": "teachers",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201210090414",
+  "entityTableName": "group_of_students",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

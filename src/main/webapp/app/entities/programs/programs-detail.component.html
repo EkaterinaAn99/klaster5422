@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="programs">
+            <h2><span jhiTranslate="klaster5422App.programs.detail.title">Programs</span> {{ programs.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="klaster5422App.programs.date">Date</span></dt>
+                <dd>
+                    <span>{{ programs.date }}</span>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.whoAdd">Who Add</span></dt>
+                <dd>
+                    <span>{{ programs.whoAdd }}</span>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.group">Group</span></dt>
+                <dd>
+                    <span>{{ programs.group }}</span>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.adress">Adress</span></dt>
+                <dd>
+                    <span>{{ programs.adress }}</span>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.students">Students</span></dt>
+                <dd>
+                    <div *ngIf="programs.students">
+                        <a [routerLink]="['/students', programs.students?.id, 'view']">{{ programs.students?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.groupOfStudents">Group Of Students</span></dt>
+                <dd>
+                    <div *ngIf="programs.groupOfStudents">
+                        <a [routerLink]="['/group-of-students', programs.groupOfStudents?.id, 'view']">{{ programs.groupOfStudents?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.programs.teachers">Teachers</span></dt>
+                <dd>
+                    <div *ngIf="programs.teachers">
+                        <a [routerLink]="['/teachers', programs.teachers?.id, 'view']">{{ programs.teachers?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/programs', programs.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+{
+  "name": "Programs",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "whoAdd",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "group",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adress",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "students",
+      "otherEntityRelationshipName": "progams",
+      "relationshipName": "students",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "groupOfStudents",
+      "otherEntityRelationshipName": "programs",
+      "relationshipName": "groupOfStudents",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teachers",
+      "otherEntityRelationshipName": "programs",
+      "relationshipName": "teachers",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201210090614",
+  "entityTableName": "programs",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

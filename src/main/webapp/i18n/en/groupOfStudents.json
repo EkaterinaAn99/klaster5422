@@ -1,0 +1,25 @@
+{
+  "klaster5422App": {
+    "groupOfStudents": {
+      "home": {
+        "title": "Group Of Students",
+        "createLabel": "Create a new Group Of Students",
+        "createOrEditLabel": "Create or edit a Group Of Students",
+        "notFound": "No Group Of Students found"
+      },
+      "created": "A new Group Of Students is created with identifier {{ param }}",
+      "updated": "A Group Of Students is updated with identifier {{ param }}",
+      "deleted": "A Group Of Students is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Group Of Students {{ id }}?"
+      },
+      "detail": {
+        "title": "Group Of Students"
+      },
+      "nameOfStudents": "Name Of Students",
+      "programs": "Programs",
+      "students": "Students",
+      "teachers": "Teachers"
+    }
+  }
+}

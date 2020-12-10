@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="groupOfStudents">
+            <h2><span jhiTranslate="klaster5422App.groupOfStudents.detail.title">Group Of Students</span> {{ groupOfStudents.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="klaster5422App.groupOfStudents.nameOfStudents">Name Of Students</span></dt>
+                <dd>
+                    <span>{{ groupOfStudents.nameOfStudents }}</span>
+                </dd>
+                <dt><span jhiTranslate="klaster5422App.groupOfStudents.teachers">Teachers</span></dt>
+                <dd>
+                    <div *ngIf="groupOfStudents.teachers">
+                        <a [routerLink]="['/teachers', groupOfStudents.teachers?.id, 'view']">{{ groupOfStudents.teachers?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/group-of-students', groupOfStudents.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="klaster5422App.programs.home.title">Programs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-programs" [routerLink]="['/programs/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="klaster5422App.programs.home.createLabel">
+            Create a new Programs
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="programs?.length === 0">
+        <span jhiTranslate="klaster5422App.programs.home.notFound">No programs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="programs && programs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.date">Date</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.whoAdd">Who Add</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.group">Group</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.adress">Adress</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.students">Students</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.groupOfStudents">Group Of Students</span></th>
+                    <th scope="col" ><span jhiTranslate="klaster5422App.programs.teachers">Teachers</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let programs of programs ;trackBy: trackId">
+                    <td><a [routerLink]="['/programs', programs.id, 'view']">{{ programs.id }}</a></td>
+                    <td>{{ programs.date | date:'medium' }}</td>
+                    <td>{{ programs.whoAdd }}</td>
+                    <td>{{ programs.group }}</td>
+                    <td>{{ programs.adress }}</td>
+                    <td>
+                        <div *ngIf="programs.students">
+                            <a [routerLink]="['/students', programs.students?.id, 'view']" >{{ programs.students?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="programs.groupOfStudents">
+                            <a [routerLink]="['/group-of-students', programs.groupOfStudents?.id, 'view']" >{{ programs.groupOfStudents?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="programs.teachers">
+                            <a [routerLink]="['/teachers', programs.teachers?.id, 'view']" >{{ programs.teachers?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/programs', programs.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/programs', programs.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(programs)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

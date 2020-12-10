@@ -1,0 +1,29 @@
+{
+  "klaster5422App": {
+    "teachers": {
+      "home": {
+        "title": "Teachers",
+        "createLabel": "Создать новый Teachers",
+        "createOrEditLabel": "Создать или отредактировать Teachers",
+        "notFound": "No Teachers found"
+      },
+      "created": "Новый Teachers создан с идентификатором {{ param }}",
+      "updated": "Teachers обновлен с идентификатором {{ param }}",
+      "deleted": "Teachers удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Teachers {{ id }}?"
+      },
+      "detail": {
+        "title": "Teachers"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "middleName": "Middle Name",
+      "type": "Type",
+      "user": "User",
+      "programs": "Programs",
+      "students": "Students",
+      "groupofstudents": "Groupofstudents"
+    }
+  }
+}

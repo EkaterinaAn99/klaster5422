@@ -1,0 +1,28 @@
+{
+  "klaster5422App": {
+    "programs": {
+      "home": {
+        "title": "Programs",
+        "createLabel": "Create a new Programs",
+        "createOrEditLabel": "Create or edit a Programs",
+        "notFound": "No Programs found"
+      },
+      "created": "A new Programs is created with identifier {{ param }}",
+      "updated": "A Programs is updated with identifier {{ param }}",
+      "deleted": "A Programs is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Programs {{ id }}?"
+      },
+      "detail": {
+        "title": "Programs"
+      },
+      "date": "Date",
+      "whoAdd": "Who Add",
+      "group": "Group",
+      "adress": "Adress",
+      "students": "Students",
+      "groupOfStudents": "Group Of Students",
+      "teachers": "Teachers"
+    }
+  }
+}

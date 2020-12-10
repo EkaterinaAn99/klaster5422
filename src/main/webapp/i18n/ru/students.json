@@ -1,0 +1,30 @@
+{
+  "klaster5422App": {
+    "students": {
+      "home": {
+        "title": "Students",
+        "createLabel": "Создать новый Students",
+        "createOrEditLabel": "Создать или отредактировать Students",
+        "notFound": "No Students found"
+      },
+      "created": "Новый Students создан с идентификатором {{ param }}",
+      "updated": "Students обновлен с идентификатором {{ param }}",
+      "deleted": "Students удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Students {{ id }}?"
+      },
+      "detail": {
+        "title": "Students"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "middleName": "Middle Name",
+      "group": "Group",
+      "type": "Type",
+      "user": "User",
+      "progams": "Progams",
+      "teachers": "Teachers",
+      "groupOfStudents": "Group Of Students"
+    }
+  }
+}

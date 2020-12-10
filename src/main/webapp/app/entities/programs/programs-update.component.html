@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-programs-heading" jhiTranslate="klaster5422App.programs.home.createOrEditLabel">Create or edit a Programs</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.date" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.whoAdd" for="field_whoAdd">Who Add</label>
+                    <input type="text" class="form-control" name="whoAdd" id="field_whoAdd"
+                           formControlName="whoAdd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.group" for="field_group">Group</label>
+                    <input type="text" class="form-control" name="group" id="field_group"
+                           formControlName="group"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.adress" for="field_adress">Adress</label>
+                    <input type="text" class="form-control" name="adress" id="field_adress"
+                           formControlName="adress"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.students" for="field_students">Students</label>
+                    <select class="form-control" id="field_students" name="students" formControlName="students">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="studentsOption.id === editForm.get('students')!.value?.id ? editForm.get('students')!.value : studentsOption" *ngFor="let studentsOption of students; trackBy: trackById">{{ studentsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.groupOfStudents" for="field_groupOfStudents">Group Of Students</label>
+                    <select class="form-control" id="field_groupOfStudents" name="groupOfStudents" formControlName="groupOfStudents">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="groupOfStudentsOption.id === editForm.get('groupOfStudents')!.value?.id ? editForm.get('groupOfStudents')!.value : groupOfStudentsOption" *ngFor="let groupOfStudentsOption of groupofstudents; trackBy: trackById">{{ groupOfStudentsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="klaster5422App.programs.teachers" for="field_teachers">Teachers</label>
+                    <select class="form-control" id="field_teachers" name="teachers" formControlName="teachers">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="teachersOption.id === editForm.get('teachers')!.value?.id ? editForm.get('teachers')!.value : teachersOption" *ngFor="let teachersOption of teachers; trackBy: trackById">{{ teachersOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

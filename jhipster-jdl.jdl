@@ -1,0 +1,58 @@
+
+entity Students {
+	name String
+    surname String
+    middleName String
+    group String
+    type String
+}
+
+entity GroupOfStudents {
+	nameOfStudents String
+}
+
+entity Teachers {
+	name String
+    surname String
+    middleName String
+    type String 
+}
+
+entity Programs {
+	date ZonedDateTime
+    whoAdd String
+    group String
+    adress String
+}
+
+relationship OneToMany {
+	Students{progams} to Programs
+}
+
+relationship OneToMany {
+	GroupOfStudents{programs} to Programs
+}
+
+relationship OneToMany {
+	Teachers{programs} to Programs
+}
+
+relationship OneToMany {
+	Teachers{students} to Students
+}
+
+relationship OneToOne {
+	Students{user(login)} to User
+}
+
+relationship OneToOne {
+	Teachers{user(login)} to User
+}
+
+relationship OneToMany {
+	Teachers{groupofstudents} to GroupOfStudents
+}
+
+relationship OneToMany {
+	GroupOfStudents{students} to Students
+}

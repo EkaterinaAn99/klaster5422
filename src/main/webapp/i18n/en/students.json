@@ -1,0 +1,30 @@
+{
+  "klaster5422App": {
+    "students": {
+      "home": {
+        "title": "Students",
+        "createLabel": "Create a new Students",
+        "createOrEditLabel": "Create or edit a Students",
+        "notFound": "No Students found"
+      },
+      "created": "A new Students is created with identifier {{ param }}",
+      "updated": "A Students is updated with identifier {{ param }}",
+      "deleted": "A Students is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Students {{ id }}?"
+      },
+      "detail": {
+        "title": "Students"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "middleName": "Middle Name",
+      "group": "Group",
+      "type": "Type",
+      "user": "User",
+      "progams": "Progams",
+      "teachers": "Teachers",
+      "groupOfStudents": "Group Of Students"
+    }
+  }
+}
